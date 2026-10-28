@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Pickup Request App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Laundry Pickup</h1>
+            <p>Schedule your laundry pickup with ease.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome-section">
+            <h2>Welcome!</h2>
+            <p>Book a pickup and manage your laundry requests in one place.</p>
+        </section>
+
+        <section class="form-section">
+            <h2>Schedule a Pickup</h2>
+
+            <form id="pickupForm">
+
+                <div class="form-group">
+                    <label for="customerName">Customer Name</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Enter your full name"
+                        required
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your 10-digit phone number"
+                        pattern="[6-9][0-9]{9}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="pickupAddress">Pickup Address</label>
+                    <textarea
+                        id="pickupAddress"
+                        name="pickupAddress"
+                        placeholder="Enter your complete pickup address"
+                        rows="3"
+                        maxlength="500"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="pickupDate">Pickup Date</label>
+                        <input
+                            type="date"
+                            id="pickupDate"
+                            name="pickupDate"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickupTime">Pickup Time</label>
+                        <input
+                            type="time"
+                            id="pickupTime"
+                            name="pickupTime"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="laundryType">Laundry Type</label>
+                    <select id="laundryType" name="laundryType" required>
+                        <option value="">Select laundry type</option>
+                        <option value="Regular Clothes">Regular Clothes</option>
+                        <option value="Delicate Clothes">Delicate Clothes</option>
+                        <option value="Bedding">Bedding</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Estimated Number of Items</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        placeholder="Enter quantity"
+                        min="1"
+                        max="500"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="instructions">Additional Instructions (Optional)</label>
+                    <textarea
+                        id="instructions"
+                        name="instructions"
+                        placeholder="Any special instructions?"
+                        rows="3"
+                        maxlength="1000"
+                    ></textarea>
+                </div>
+
+                <button type="submit" id="submitButton">
+                    Submit Pickup Request
+                </button>
+
+                <p id="formMessage" role="status" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <section class="requests-section">
+            <h2>Pickup Requests</h2>
+
+            <p id="requestCount">Total Requests: 0</p>
+
+            <div id="requestsList">
+                <p>No pickup requests yet. Submit your first request above!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Laundry Pickup Request App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
